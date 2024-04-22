@@ -1,0 +1,16 @@
+include common.in
+kpoint-folding 3 3 1
+
+elec-n-bands 280 
+
+lcao-params 25 1e-06 0.001
+ionic-minimize \
+    nIterations 60 \
+    knormThreshold       0.0004 \ #0.02 eV/A
+    energyDiffThreshold  1e-06
+electronic-minimize \
+    nIterations 200 \	
+    energyDiffThreshold 1e-06
+
+dump-name jdft.$VAR
+dump End State ElecDensity EigStats

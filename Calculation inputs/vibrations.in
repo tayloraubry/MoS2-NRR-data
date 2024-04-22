@@ -1,0 +1,9 @@
+include common.in
+dump End None
+vibrations \
+    dr 0.01 \
+    centralDiff no \
+    useConstraints yes \
+    translationSym no \
+    rotationSym no \
+    T 298

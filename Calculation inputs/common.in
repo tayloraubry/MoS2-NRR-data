@@ -1,0 +1,28 @@
+#STRUCTURE
+include jdft.lattice
+include jdft.ionpos
+
+#INTERACTIONS
+coulomb-interaction Slab 001
+coulomb-truncation-embed 0  0  0
+elec-smearing Fermi 0.01
+van-der-waals D3
+
+#SPIN
+spintype z-spin
+elec-initial-magnetization 0 no
+ion-species /PPlib/Dojo/$ID.upf
+elec-cutoff 45
+
+#FLUID
+fluid LinearPCM
+pcm-variant CANDLE
+fluid-solvent H2O
+fluid-cation Na+ 0.5
+fluid-anion F- 0.5
+dump End BoundCharge
+
+#APPLIED POTENTIAL
+#target-mu
+#set to -0.1412, -0.1486, -0.1559, -0.1633, -0.1706, -0.1780
+#for -0.8, -0.6, -0.4, -0.2, 0.0, 0.2 V vs. RHE, respectively

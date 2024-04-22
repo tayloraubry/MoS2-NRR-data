@@ -1,0 +1,87 @@
+include common.in
+kpoint-folding 3 3 1
+
+lcao-params 25 1e-06 0.001
+ionic-minimize \
+    nIterations 0 \
+    knormThreshold       0.0004 \ #0.02 eV/A
+    energyDiffThreshold  1e-06
+electronic-minimize \
+    nIterations 200 \	
+    energyDiffThreshold 1e-06
+
+dump-name jdft.$VAR
+dump End State ElecDensity EigStats
+dump-Eresolved-density -0.0735 0.0735 # [-2 2] eV
+dump-Eresolved-density -0.2200 0.2200 # [-6 6] eV
+
+elec-n-bands 288
+converge-empty-states yes
+density-of-states Esigma 0.001 \
+    Total \
+    OrthoOrbital Mo 0 1d  \
+    OrthoOrbital Mo 0 1s  \
+    OrthoOrbital S  0 1p \
+    OrthoOrbital S  0 1s \
+    OrthoOrbital Mo 1 1d \
+    OrthoOrbital Mo 2 1d \
+    OrthoOrbital Mo 3 1d \
+    OrthoOrbital Mo 4 1d \
+    OrthoOrbital Mo 5 1d \
+    OrthoOrbital Mo 6 1d \
+    OrthoOrbital Mo 6 dxy    \   
+    OrthoOrbital Mo 6 dyz    \   
+    OrthoOrbital Mo 6 dz2    \   
+    OrthoOrbital Mo 6 dxz    \   
+    OrthoOrbital Mo 6 dx2-y2 \  
+    OrthoOrbital Mo 7 1d \
+    OrthoOrbital Mo 8 1d \
+    OrthoOrbital Mo 9 1d \
+    OrthoOrbital Mo 10 1d \
+    OrthoOrbital Mo 10 dxy    \      
+    OrthoOrbital Mo 10 dyz    \      
+    OrthoOrbital Mo 10 dz2    \      
+    OrthoOrbital Mo 10 dxz    \      
+    OrthoOrbital Mo 10 dx2-y2 \  
+    OrthoOrbital Mo 11 1d \
+    OrthoOrbital Mo 11 dxy    \      
+    OrthoOrbital Mo 11 dyz    \      
+    OrthoOrbital Mo 11 dz2    \      
+    OrthoOrbital Mo 11 dxz    \      
+    OrthoOrbital Mo 11 dx2-y2 \  
+    OrthoOrbital Mo 12 1d \
+    OrthoOrbital Mo 13 1d \
+    OrthoOrbital Mo 14 1d \
+    OrthoOrbital Mo 15 1d \
+    OrthoOrbital Mo 16 1d \
+    OrthoOrbital S  1 1p \
+    OrthoOrbital S  2 1p \
+    OrthoOrbital S  3 1p \
+    OrthoOrbital S  4 1p \
+    OrthoOrbital S  5 1p \
+    OrthoOrbital S  6 1p \
+    OrthoOrbital S  7 1p \
+    OrthoOrbital S  8 1p \
+    OrthoOrbital S  9 1p \
+    OrthoOrbital S  10 1p \
+    OrthoOrbital S  11 1p \
+    OrthoOrbital S  12 1p \
+    OrthoOrbital S  13 1p \
+    OrthoOrbital S  14 1p \
+    OrthoOrbital S  15 1p \
+    OrthoOrbital S  16 1p \
+    OrthoOrbital S  17 1p \
+    OrthoOrbital S  18 1p \
+    OrthoOrbital S  19 1p \
+    OrthoOrbital S  20 1p \
+    OrthoOrbital S  21 1p \
+    OrthoOrbital S  22 1p \
+    OrthoOrbital S  23 1p \
+    OrthoOrbital S  24 1p \
+    OrthoOrbital S  25 1p \
+    OrthoOrbital S  26 1p \
+    OrthoOrbital S  27 1p \
+    OrthoOrbital S  28 1p \
+    OrthoOrbital S  29 1p \
+    OrthoOrbital S  30 1p \
+    OrthoOrbital S  31 1p
